@@ -11,9 +11,12 @@ abstract class AppColors{
   static const Color transparent = Colors.transparent;
 
   static const Color lightBackground = Color(0xFFF9F9F9);
-  static const Color hintColor = Color(0xFF6B7280);
-  static const Color dividerColor = Color(0xFFC6C6C6);
+  static const Color hintColor = Color(0xFF808080);
+  static const Color secondaryDarkCardColor = Color(0xFF333333);
+  static const Color dividerColor = Color(0xFFE6E6E6);
+  static const Color dividerColorDark = Color(0xFFE6E6E6);
   static const Color lightGray = Color(0xFFCCCCCC);
+  static const Color darkGray = Color(0xFF6B7280);
 
 
   static const Color darkCardColor = Color(0xFF1A1A1A);

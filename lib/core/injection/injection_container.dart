@@ -3,6 +3,7 @@ import 'package:qerp_app/core/navigator/inj_navigator.dart';
 import 'package:qerp_app/core/network/network_service_inj.dart';
 import 'package:qerp_app/core/storage/storage_inj.dart';
 import 'package:qerp_app/features/layout_screen/layout_inj.dart';
+import 'package:qerp_app/features/work_schedule_screen/work_schedule_inj.dart';
 
 GetIt sl = GetIt.instance;
 
@@ -11,4 +12,5 @@ await initStorageInjection(sl);
 initNetworkService(sl);
 initNavigator(sl);
 initLayoutInjection(sl);
+workSchduleInj(sl);
 }

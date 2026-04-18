@@ -29,7 +29,7 @@ class AppTheme {
       brightness: Brightness.light,
       primary: AppColors.white,
       secondary: AppColors.white,
-      surface: AppColors.black,
+      surface: AppColors.lightGray,
       shadow: AppColors.dividerColor,
       outline: AppColors.dividerColor,
       onError: AppColors.red,
@@ -68,7 +68,7 @@ class AppTheme {
     ),
     tabBarTheme: AppThemeData.tabBarThemeData(
       primaryColor: AppColors.white,
-      borderColor: AppColors.white,
+      borderColor: AppColors.dividerColor,
     ),
     textTheme: AppThemeData.textTheme(textColor: AppColors.black),
     cardTheme: CardThemeData(
@@ -87,7 +87,7 @@ class AppTheme {
     disabledColor: AppColors.black.withValues(alpha: 0.2),
     hintColor: AppColors.hintColor,
     dividerTheme: DividerThemeData(
-      color: AppColors.dividerColor,
+      color: AppColors.transparent,
       space: 20.h,
       thickness: 1.25.r,
     ),
@@ -102,10 +102,10 @@ class AppTheme {
     colorScheme: const ColorScheme.dark(
       brightness: Brightness.dark,
       primary: AppColors.black,
-      secondary: AppColors.darkCardColor,
-      surface: AppColors.white,
+      secondary: AppColors.secondaryDarkCardColor,
+      surface: AppColors.nightGray,
       shadow: AppColors.black,
-      outline: AppColors.black,
+      outline: AppColors.dividerColorDark,
       onError: AppColors.red,
       onPrimary: AppColors.black,
     ),

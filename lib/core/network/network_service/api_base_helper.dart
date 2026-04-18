@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
+import 'package:qerp_app/core/config/app_endpoints.dart';
 import 'package:qerp_app/core/network/network_service/error_helper.dart';
 import 'package:qerp_app/core/network/network_service/exceptions.dart';
 
@@ -45,7 +46,7 @@ class ApiBaseHelper {
   void _initializeDio(){
     _dio = Dio(
       BaseOptions(
-        baseUrl: baseUrl,
+        baseUrl: AppEndpoints.baseUrl,
         headers: _defaultHeaders()
       )
     )..interceptors.add(_logger);
@@ -55,7 +56,7 @@ class ApiBaseHelper {
     Future<Response<T>> Function() request,
   )async{
     try{
-      final String token = '';
+      final String token = '747|uLkQacxK1uFroP4kVCSB9nAv1AEt9d60XVEPEYdje2ab095d';
       _dio.options.headers['Authorization'] = 'Bearer $token';
       final response = await request();
       return response.data!;

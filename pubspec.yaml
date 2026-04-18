@@ -77,10 +77,18 @@ dependencies:
   #intl
   intl: ^0.20.2
 
+  
+
   #Flutter launcher icons for generating app icons
   flutter_launcher_icons: ^0.14.4
   #Flutter native splash for generating splash screen
   flutter_native_splash: ^2.4.7
+
+  #Table calendar for calendar view
+  table_calendar: ^3.2.0
+
+  #shimmer for loading effect
+  shimmer: ^3.0.0
 
   #Adiptive Theme for dark and light theme
   adaptive_theme: ^3.7.2
