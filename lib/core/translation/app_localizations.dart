@@ -121,6 +121,162 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Profile'**
   String get profile;
+
+  /// No description provided for @list.
+  ///
+  /// In en, this message translates to:
+  /// **'List'**
+  String get list;
+
+  /// No description provided for @calendar.
+  ///
+  /// In en, this message translates to:
+  /// **'Calendar'**
+  String get calendar;
+
+  /// No description provided for @nightShift.
+  ///
+  /// In en, this message translates to:
+  /// **'Night Shift'**
+  String get nightShift;
+
+  /// No description provided for @morningShift.
+  ///
+  /// In en, this message translates to:
+  /// **'Morning Shift'**
+  String get morningShift;
+
+  /// No description provided for @dayShift.
+  ///
+  /// In en, this message translates to:
+  /// **'Day Shift'**
+  String get dayShift;
+
+  /// No description provided for @fullShift.
+  ///
+  /// In en, this message translates to:
+  /// **'Full Shift'**
+  String get fullShift;
+
+  /// No description provided for @dayOff.
+  ///
+  /// In en, this message translates to:
+  /// **'Day Off'**
+  String get dayOff;
+
+  /// No description provided for @eveningShif.
+  ///
+  /// In en, this message translates to:
+  /// **'Evening Shift'**
+  String get eveningShif;
+
+  /// No description provided for @noWorkingDays.
+  ///
+  /// In en, this message translates to:
+  /// **'There are no working days'**
+  String get noWorkingDays;
+
+  /// No description provided for @noWorkingDaysAddedForThisMonth.
+  ///
+  /// In en, this message translates to:
+  /// **'No shifts were added for '**
+  String get noWorkingDaysAddedForThisMonth;
+
+  /// No description provided for @somethingWentWrong.
+  ///
+  /// In en, this message translates to:
+  /// **'Something went wrong, Please try again'**
+  String get somethingWentWrong;
+
+  /// No description provided for @startOfWork.
+  ///
+  /// In en, this message translates to:
+  /// **'Start of work'**
+  String get startOfWork;
+
+  /// No description provided for @endOfWork.
+  ///
+  /// In en, this message translates to:
+  /// **'End of work'**
+  String get endOfWork;
+
+  /// No description provided for @noWorkToday.
+  ///
+  /// In en, this message translates to:
+  /// **'No work today 🎉 '**
+  String get noWorkToday;
+
+  /// No description provided for @enjoyYourDay.
+  ///
+  /// In en, this message translates to:
+  /// **'Enjoy your day'**
+  String get enjoyYourDay;
+
+  /// No description provided for @preferences.
+  ///
+  /// In en, this message translates to:
+  /// **'Preferences'**
+  String get preferences;
+
+  /// No description provided for @darkMode.
+  ///
+  /// In en, this message translates to:
+  /// **'Dark Mode'**
+  String get darkMode;
+
+  /// No description provided for @lightMode.
+  ///
+  /// In en, this message translates to:
+  /// **'Light Mode'**
+  String get lightMode;
+
+  /// No description provided for @language.
+  ///
+  /// In en, this message translates to:
+  /// **'Language'**
+  String get language;
+
+  /// No description provided for @generalSettings.
+  ///
+  /// In en, this message translates to:
+  /// **'General Settings'**
+  String get generalSettings;
+
+  /// No description provided for @termsOfUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Terms of Use'**
+  String get termsOfUse;
+
+  /// No description provided for @privacyPolicy.
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy Policy'**
+  String get privacyPolicy;
+
+  /// No description provided for @helpCenter.
+  ///
+  /// In en, this message translates to:
+  /// **'Help Center'**
+  String get helpCenter;
+
+  /// No description provided for @changeLanguage.
+  ///
+  /// In en, this message translates to:
+  /// **'Change Language'**
+  String get changeLanguage;
+
+  /// No description provided for @restartApp.
+  ///
+  /// In en, this message translates to:
+  /// **'After selecting the language, the app will restart to apply the new language.'**
+  String get restartApp;
+
+  /// No description provided for @save.
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get save;
 }
 
 class _AppLocalizationsDelegate

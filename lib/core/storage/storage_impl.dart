@@ -25,6 +25,5 @@ class StorageImpl extends Storage{
   Future<void> storeLang({required String langCode})async {
     await stringBox.put(_language, langCode);
   }
-  
 
 }

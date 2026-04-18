@@ -22,6 +22,10 @@ class AppIcons {
   static const String sunrise = '${_path}sunrise.svg';
   static const String sunset = '${_path}sunset.svg';
   static const String ticket = '${_path}ticket.svg';
+  static const String leftArrow = '${_path}left_arrow.svg';
+  static const String rightArrow = '${_path}right_arrow.svg';
+  static const String noResult = '${_path}no_results.svg';
+  static const String language = '${_path}language.svg';
 
   static Widget icon({required String icon, double size = 24, Color? color}) =>
       SvgPicture.asset(
