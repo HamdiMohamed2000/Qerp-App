@@ -30,7 +30,6 @@ class _SelectLanguageBottomSheet extends State<SelectLanguageBottomSheet>{
   @override
   void initState() {
     super.initState();
-    // 2. إعطاؤه القيمة الابتدائية عند فتح الـ BottomSheet فقط
     changedLang = sl<Storage>().getLang();
   }
    @override
