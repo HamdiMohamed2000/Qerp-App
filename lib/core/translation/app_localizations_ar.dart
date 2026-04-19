@@ -69,7 +69,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get preferences => 'التفضيلات';
 
   @override
-  String get darkMode => 'Dark Mode';
+  String get darkMode => 'الوضع الداكن';
 
   @override
   String get lightMode => 'الوضع الفاتح';

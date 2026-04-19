@@ -9,6 +9,7 @@ import 'package:qerp_app/core/widgets/circle_container.dart';
 import 'package:qerp_app/features/layout_screen/view/cubit/bnb_cubit.dart';
 import 'package:qerp_app/features/layout_screen/view/cubit/bnb_state.dart';
 import 'package:qerp_app/features/layout_screen/view/widgets/bnb_icon.dart';
+import 'package:qerp_app/features/profile_screen/view/screen/profile_screen.dart';
 import 'package:qerp_app/features/work_schedule_screen/view/cubit/work_schedule_cubit.dart';
 import 'package:qerp_app/features/work_schedule_screen/view/screens/work_schedule_screen.dart';
 
@@ -25,7 +26,7 @@ class _LayoutScreenState extends State<LayoutScreen> {
   @override
   void initState() {
     super.initState();
-    screens = [Container(), BlocProvider(create: (context) => sl<WorkScheduleCubit>(),child: WorkScheduleScreen(),), Container(), Container()];
+    screens = [Container(), BlocProvider(create: (context) => sl<WorkScheduleCubit>(),child: WorkScheduleScreen(),), Container(), ProfileScreen()];
   }
 
   @override

@@ -93,6 +93,9 @@ dependencies:
   #Adiptive Theme for dark and light theme
   adaptive_theme: ^3.7.2
 
+  #flutter phoenix for restarting the app
+  flutter_phoenix: ^1.1.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
