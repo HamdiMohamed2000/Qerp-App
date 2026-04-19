@@ -28,7 +28,7 @@ class AppTheme {
     colorScheme: const ColorScheme.light(
       brightness: Brightness.light,
       primary: AppColors.white,
-      secondary: AppColors.white,
+      secondary: AppColors.lightBackground,
       surface: AppColors.lightGray,
       shadow: AppColors.dividerColor,
       outline: AppColors.dividerColor,

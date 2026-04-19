@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:qerp_app/core/config/app_colors.dart';
 import 'package:qerp_app/core/config/app_icons.dart';
 import 'package:qerp_app/core/config/style/styles.dart';
-import 'package:qerp_app/core/injection/injection_container.dart';
+import 'package:qerp_app/core/extentions/context_helper.dart';
 import 'package:qerp_app/core/methods/convet_date_time.dart';
-import 'package:qerp_app/core/storage/storage.dart';
 
 class CalendarHeader extends StatelessWidget{
     final DateTime date;
@@ -14,11 +13,11 @@ class CalendarHeader extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    final bool isArabic = sl<Storage>().getLang() == 'ar';
+    
     final bool isCurrentMonth =
         date.year == DateTime.now().year && date.month == DateTime.now().month;
-    final backIcon = isArabic ? AppIcons.rightArrow : AppIcons.leftArrow;
-    final forwardIcon = isArabic ? AppIcons.leftArrow : AppIcons.rightArrow;
+    final backIcon = context.isArabic ? AppIcons.rightArrow : AppIcons.leftArrow;
+    final forwardIcon = context.isArabic ? AppIcons.leftArrow : AppIcons.rightArrow;
     
     return Row(
       spacing: 10,

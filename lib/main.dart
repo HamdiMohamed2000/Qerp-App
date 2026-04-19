@@ -2,6 +2,7 @@ import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:qerp_app/core/injection/injection_container.dart' as injection;
 import 'package:qerp_app/core/navigator/app_navigator.dart';
@@ -16,12 +17,11 @@ void main()async {
   WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load(fileName: "env/.env");
   await injection.init();
-  runApp(const MyApp());
+  runApp(Phoenix(child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
      return ScreenUtilInit(
