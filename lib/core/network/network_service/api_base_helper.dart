@@ -4,8 +4,10 @@ import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import 'package:qerp_app/core/config/app_endpoints.dart';
+import 'package:qerp_app/core/injection/injection_container.dart';
 import 'package:qerp_app/core/network/network_service/error_helper.dart';
 import 'package:qerp_app/core/network/network_service/exceptions.dart';
+import 'package:qerp_app/core/storage/storage.dart';
 
 class ApiBaseHelper {
   ApiBaseHelper._internal();
@@ -33,12 +35,12 @@ class ApiBaseHelper {
     enabled: kDebugMode
   );
 
-  final String baseUrl = '';
 
   Map<String,String> _defaultHeaders(){
     return{
       'Content-Type': 'application/json',
       'Accept' : 'Application/json',
+      'Accept-Language' : sl<Storage>().getLang()
     };
 
   }
@@ -50,6 +52,10 @@ class ApiBaseHelper {
         headers: _defaultHeaders()
       )
     )..interceptors.add(_logger);
+  }
+
+  void updateLocaleInHeaders(String locale) {
+    _dio.options.headers['Accept-Language'] = locale;
   }
 
   Future<T> _performRequest<T>(
