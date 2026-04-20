@@ -1,3 +1,3 @@
 enum ShiftsEnum {
-  night,morning,day,fullTime,evening,dayOff
+  night,morning,day,fullTime,none
 }

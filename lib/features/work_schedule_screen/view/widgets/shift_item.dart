@@ -31,13 +31,13 @@ class ShiftItem extends StatelessWidget{
           ),
           child: Row(
             spacing: 5.w,
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               CircleContainer(
                 size: 30,
                 color: ShiftsMethod.getShiftColor(shift).withValues(alpha: 0.1),
-                widget: Center(child: AppIcons.icon(icon: ShiftsMethod.getShiftIcon(shift),size: 18)),
+                widget: Center(child: AppIcons.icon(icon: ShiftsMethod.getShiftIcon(shift),size: 18,color: ShiftsMethod.getShiftColor(shift))),
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

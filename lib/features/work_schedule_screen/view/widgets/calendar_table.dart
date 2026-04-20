@@ -21,11 +21,11 @@ class CalendarTable extends StatelessWidget {
     return calendarData.cast<CalendarEntity>().firstWhere(
       (element) => element.day == day.day && day.month == focusedDay.month,
       orElse: () => CalendarEntity(
-        id: -1,
+        id: 0,
         day: day.day,
         dayName: DateFormat.E().format(day),
         shiftId: '',
-        isOnLeave: true,
+        isOnLeave: false,
       ),
     );
   }
@@ -91,12 +91,7 @@ class CalendarTable extends StatelessWidget {
                   },
                   defaultBuilder: (context, day, focusedDay) {
                     final entity = _fetchDays(day);
-                    if (entity.day != 0 && !entity.isOnLeave) {
-                      return Center(
-                        child: CalendarDayItem(calendarEntity: entity),
-                      );
-                    }
-                    return CalendarDayItem(calendarEntity: entity);
+                    return  CalendarDayItem(calendarEntity: entity);
                   },
 
                   outsideBuilder: (context, day, focusedDay) {
