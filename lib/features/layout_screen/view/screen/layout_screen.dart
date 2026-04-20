@@ -35,7 +35,7 @@ class _LayoutScreenState extends State<LayoutScreen> {
       builder: (context, state) {
         return Scaffold(
           floatingActionButton: CircleContainer(
-            size: 70,
+            size: 55,
             color: Theme.of(context).cardColor,
             widget: Center(
               child: Container(

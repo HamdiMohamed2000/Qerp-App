@@ -146,6 +146,19 @@ flutter:
         - asset: assets/fonts/ReadexPro-Bold.ttf
           weight: 700
   
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/logo.png"
+  adaptive_icon_background: "#1A1A2E"
+  adaptive_icon_foreground: "assets/images/logo.png"
+
+flutter_native_splash:
+  color: "#0F172A"
+  image: assets/images/splash_logo.png
+  android_12:
+    image: assets/images/splash_logo.png
+    color: "#0F172A"   
 
   # To add assets to your application, add an assets section, like this:
   # assets:

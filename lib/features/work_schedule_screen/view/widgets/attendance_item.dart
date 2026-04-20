@@ -20,9 +20,7 @@ class AttendanceItem extends StatelessWidget {
     final isOnLeave = attendanceEntity.isOnLeave;
     final shift = ShiftsMethod.getShift(
       ShiftsMethod.getShiftValue(
-        ShiftsMethod.shiftNameMapping[isOnLeave
-            ? true
-            : attendanceEntity.shiftName]!,
+        ShiftsMethod.shiftNameMapping[attendanceEntity.shiftName]!,
       ),
     );
 
@@ -33,7 +31,7 @@ class AttendanceItem extends StatelessWidget {
         borderRadius: BorderRadius.all(Radius.circular(15.r)),
         color: Theme.of(context).cardColor,
         border: BorderDirectional(
-          start: BorderSide(color: ShiftsMethod.getShiftColor(shift), width: 7),
+          start: BorderSide(color: isOnLeave? AppColors.pink: ShiftsMethod.getShiftColor(shift), width: 5),
         ),
       ),
       child: Column(
@@ -99,7 +97,7 @@ class AttendanceItem extends StatelessWidget {
                           AppIcons.icon(
                             icon: AppIcons.calendar,
                             color: ShiftsMethod.getShiftColor(shift),
-                            size: 20,
+                            size: 15,
                           ),
                       ],
                     ),
@@ -114,7 +112,7 @@ class AttendanceItem extends StatelessWidget {
                 ],
               ),
               AppChip(
-                color: ShiftsMethod.getShiftColor(shift).withValues(alpha: 0.1),
+                color: isOnLeave?  AppColors.green.withValues(alpha: 0.1) :ShiftsMethod.getShiftColor(shift).withValues(alpha: 0.1),
                 child: Row(
                   spacing: 5.w,
                   children: [
@@ -125,6 +123,7 @@ class AttendanceItem extends StatelessWidget {
                       color: isOnLeave
                           ? AppColors.green
                           : ShiftsMethod.getShiftColor(shift),
+                          size: 15
                     ),
                     Text(
                       isOnLeave

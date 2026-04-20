@@ -9,7 +9,7 @@ class ShiftsGridList extends StatelessWidget{
   const ShiftsGridList({super.key, required this.shiftEntity});
   @override
   Widget build(BuildContext context) {
-    final filteredShifts = shiftEntity.where((shift) => shift.id != 4).toList();
+    final filteredShifts = shiftEntity.where((shift) => shift.id != 5).toList();
    return GridView.builder(
     padding: EdgeInsets.symmetric(horizontal: 10.w),
     physics: const NeverScrollableScrollPhysics(),

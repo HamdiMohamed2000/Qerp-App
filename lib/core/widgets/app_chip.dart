@@ -13,11 +13,11 @@ class AppChip extends StatelessWidget {
   Widget build(BuildContext context) {
     return IntrinsicWidth(
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 7.h),
+        padding: EdgeInsets.all(10),
         alignment: Alignment.center,
         decoration: BoxDecoration(
           color:  color,
-          borderRadius: BorderRadius.circular(radius ?? 10.r),
+          borderRadius: BorderRadius.circular(radius ?? 5.r),
         ),
         child: child
       ),
