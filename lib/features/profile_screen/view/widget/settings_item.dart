@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:qerp_app/core/config/app_colors.dart';
 import 'package:qerp_app/core/config/app_icons.dart';
 import 'package:qerp_app/core/config/style/styles.dart';
+import 'package:qerp_app/core/extentions/context_helper.dart';
 
 class SettingsItem extends StatelessWidget{
   final Widget? widget;
@@ -12,8 +13,9 @@ class SettingsItem extends StatelessWidget{
   final BorderRadius? radius;
   final EdgeInsets? padding;
   final bool? showDivider;
+  final double? iconSize;
 
-  const SettingsItem({super.key, this.widget, this.text, this.icon, this.title, this.radius, this.padding, this.showDivider = false});
+  const SettingsItem({super.key, this.widget, this.text, this.icon, this.title, this.radius, this.padding, this.showDivider = false, this.iconSize});
 
   @override
   Widget build(BuildContext context) {
@@ -38,15 +40,17 @@ class SettingsItem extends StatelessWidget{
                 children: [
                   ShaderMask(shaderCallback: (Rect bounds){
           return AppColors.primaryGradient.createShader(bounds);
-        },child: AppIcons.icon(icon: icon!,color: AppColors.white),),
+        },child: AppIcons.icon(icon: icon!,color: AppColors.white,size: iconSize ?? 20),),
                   
                   Text(text ?? '',style: TextStyles.textViewMedium13,)
                 ],
               ),
-
+ 
               if(widget != null) ... [
                 widget!
-              ] else Icon( Icons.arrow_right ,size: 30,color: Theme.of(context).hintColor,)
+              ] else Transform.flip(
+                flipX:context.isArabic? false : true,
+                child: AppIcons.icon(icon:AppIcons.settingsArrow ,color: AppColors.lightGray,size: 15))
 
             ],
           ),

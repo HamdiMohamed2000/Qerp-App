@@ -15,9 +15,9 @@ class ShiftsGridList extends StatelessWidget{
     physics: const NeverScrollableScrollPhysics(),
     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,        
-        mainAxisSpacing: 10.h,     
+        mainAxisSpacing: 8.h,     
         crossAxisSpacing: 10.w,     
-        childAspectRatio: 3.0,      
+        childAspectRatio: 3.5,      
       ),
     itemBuilder: (context,index){
       return ShiftItem(shiftEntity: filteredShifts,index: index,);

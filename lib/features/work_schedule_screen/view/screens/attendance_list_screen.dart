@@ -29,13 +29,13 @@ class _AttendancListScreen extends State<AttendanceListScreen> {
           return AttendanceLoadingItem();
         } else if (state is GetAttendanceListSuccess) {
           return ListView.separated(
-            padding: EdgeInsets.symmetric(horizontal: 15.w,vertical: 10.h),
+            padding: EdgeInsets.only(top: 10.h,bottom: 100.h,right: 16.w,left: 16.w),
             itemBuilder: (context, index) {
               return AttendanceItem(
                 attendanceEntity: context.read<WorkScheduleCubit>().attendanceList[index],
               );
             },
-            separatorBuilder: (context, builder) => SizedBox(height: 10.h),
+            separatorBuilder: (context, builder) => SizedBox(height: 16.h),
             itemCount: context.read<WorkScheduleCubit>().attendanceList.length,
           );
         }

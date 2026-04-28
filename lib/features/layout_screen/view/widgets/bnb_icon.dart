@@ -26,7 +26,7 @@ class BnbIcon extends StatelessWidget{
           spacing: 7.h,
           children: [
             AppIcons.icon(icon: icon,color: AppColors.white),
-            Text(text,style: TextStyles.textViewMedium10.copyWith(color: AppColors.white),)
+            Text(text,style: TextStyles.textViewMedium10.copyWith(color: AppColors.white),maxLines: 1,overflow: TextOverflow.ellipsis,)
           ],
         ),
         
@@ -36,7 +36,7 @@ class BnbIcon extends StatelessWidget{
             spacing: 7,
             children: [
               AppIcons.icon(icon: icon,color: AppColors.lightGray,),
-              Text(text,style: TextStyles.textViewMedium10.copyWith(color: Theme.of(context).cardColor),)
+              Text(text,style: TextStyles.textViewMedium10.copyWith(color: Theme.of(context).cardColor),maxLines: 1,overflow: TextOverflow.ellipsis,)
             ],
           )
 

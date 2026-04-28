@@ -26,7 +26,15 @@ class _LayoutScreenState extends State<LayoutScreen> {
   @override
   void initState() {
     super.initState();
-    screens = [Container(), BlocProvider(create: (context) => sl<WorkScheduleCubit>(),child: WorkScheduleScreen(),), Container(), ProfileScreen()];
+    screens = [
+      Container(),
+      BlocProvider(
+        create: (context) => sl<WorkScheduleCubit>(),
+        child: WorkScheduleScreen(),
+      ),
+      Container(),
+      ProfileScreen(),
+    ];
   }
 
   @override
@@ -34,53 +42,56 @@ class _LayoutScreenState extends State<LayoutScreen> {
     return BlocBuilder<BnbCubit, BnbState>(
       builder: (context, state) {
         return Scaffold(
-          floatingActionButton: CircleContainer(
-            size: 55,
-            color: Theme.of(context).cardColor,
-            widget: Center(
-              child: Container(
-                width: 40.w,
-                height: 40.h,
-              
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  gradient: AppColors.primaryGradient,
-                  boxShadow: [
-                  BoxShadow(
-                    color: const Color(0xFF613EEA).withValues(alpha: 0.5), 
-                    blurRadius: 12,
-                    offset: const Offset(0, 4), 
-                    spreadRadius: 0,
-                  ),
-                ],
-                ),
-                 child: Center(child: AppIcons.icon(icon: AppIcons.ticket,)),
-              ),
-            ),
-          ),
-          floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+          extendBody: true,
+          floatingActionButton: Transform.translate(
+  offset: Offset(0, 15.h), 
+  child: CircleContainer(
+    size: 70,
+    color: Theme.of(context).cardColor,
+    widget: Center(
+      child: CircleContainer(
+        size: 45,
+        shadow: [
+          BoxShadow(
+      color: AppColors.blue.withValues(alpha: 0.5),
+      blurRadius: 12,
+      spreadRadius: 0,
+      offset: const Offset(0, 4),
+    ),
+        ],
+        gradient: AppColors.primaryGradient,
+        widget: Center(child: AppIcons.icon(icon: AppIcons.ticket, color: AppColors.white)),
+      ),
+    ),
+  )
+),
+          floatingActionButtonLocation:
+              FloatingActionButtonLocation.centerDocked,
           body: screens[state.bnbIndex],
-          bottomNavigationBar: BottomAppBar(
-            //shape: const CircularNotchedRectangle(),
-            color: Theme.of(context).cardColor,
-            notchMargin: 5,
-            child: SizedBox(
-              height: 70.h,
+          bottomNavigationBar: ClipRRect(
+            borderRadius: BorderRadiusGeometry.only(
+              topLeft: Radius.circular(15.r),
+              topRight: Radius.circular(15.r),
+            ),
+            child: BottomAppBar(
+              color: Theme.of(context).cardColor,
               child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    BnbIcon(
-                      icon: AppIcons.home,
-                      text: context.tr.home,
-                      isSelected: state.bnbIndex == 0,
-                      onTap: () {
-                        if (state.bnbIndex != 0) {
-                          context.read<BnbCubit>().changeIndex(currentIndex: 0);
-                        }
-                      },
-                    ),
-
-                    BnbIcon(
+                spacing: 40,
+                children: [
+                  Expanded(
+                    child: Row(
+                      children: [
+                        BnbIcon(
+                          icon: AppIcons.home,
+                          text: context.tr.home,
+                          isSelected: state.bnbIndex == 0,
+                          onTap: () {
+                            if (state.bnbIndex != 0) {
+                              context.read<BnbCubit>().changeIndex(currentIndex: 0);
+                            }
+                          },
+                        ),
+                        BnbIcon(
                       icon: AppIcons.clock,
                       text: context.tr.workSchedule,
                       isSelected: state.bnbIndex == 1,
@@ -90,19 +101,25 @@ class _LayoutScreenState extends State<LayoutScreen> {
                         }
                       },
                     ),
-
-                    BnbIcon(
-                      icon: AppIcons.info,
-                      text: context.tr.information,
-                      isSelected: state.bnbIndex == 2,
-                      onTap: () {
-                        if (state.bnbIndex != 2) {
-                          context.read<BnbCubit>().changeIndex(currentIndex: 2);
-                        }
-                      },
+                      ],
                     ),
-
-                    BnbIcon(
+                  ),
+                  
+              
+                  Expanded(
+                    child: Row(
+                      children: [
+                        BnbIcon(
+                          icon: AppIcons.info,
+                          text: context.tr.information,
+                          isSelected: state.bnbIndex == 2,
+                          onTap: () {
+                            if (state.bnbIndex != 2) {
+                              context.read<BnbCubit>().changeIndex(currentIndex: 2);
+                            }
+                          },
+                        ),
+                        BnbIcon(
                       icon: AppIcons.profile,
                       text: context.tr.profile,
                       isSelected: state.bnbIndex == 3,
@@ -112,11 +129,14 @@ class _LayoutScreenState extends State<LayoutScreen> {
                         }
                       },
                     ),
-                  ],
-                ),
-            )
+                      ],
+                    ),
+                  ),
+              
+                ],
+              ),
+            ),
           ),
-            
         );
       },
     );

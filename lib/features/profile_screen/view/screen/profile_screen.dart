@@ -17,7 +17,7 @@ class _ProfileScreenState extends State<ProfileScreen>{
     return Scaffold(
       appBar: AppBar(),
       body: SingleChildScrollView(
-        padding: EdgeInsets.symmetric(horizontal: 15.w),
+        padding: EdgeInsets.symmetric(horizontal: 16.w),
         child: Column(
           spacing: 20.h,
           children: [
