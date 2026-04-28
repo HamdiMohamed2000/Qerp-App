@@ -34,7 +34,7 @@ class PreferencesItem extends StatelessWidget {
         SettingsItem(
           text: context.tr.language,
           icon: AppIcons.language,
-          padding: EdgeInsets.symmetric(horizontal: 10.h,vertical: 20),
+          padding: EdgeInsets.symmetric(horizontal: 10.h,vertical: 10),
           radius: BorderRadius.only(
             bottomLeft: Radius.circular(10.r),
             bottomRight: Radius.circular(10.r),

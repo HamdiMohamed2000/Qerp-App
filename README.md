@@ -1,8 +1,54 @@
 
-Qerp App
+# Qerp App 🕒
 
 A professional Flutter application for managing work schedules and attendance, built with Clean Architecture and Cubit. It features  shift tracking, multi-language support, and a responsive UI.
 
+
+[![Flutter Version](https://img.shields.io/badge/Flutter-3.41.4-blue)](https://flutter.dev)
+[![Dart Version](https://img.shields.io/badge/Dart-Latest-blue)](https://dart.dev/)
+
+
+
+## Table of Contents
+- [Features](#features)
+- [Technical Architecture](#technical-architecture)
+- [Tech Stack](#tech-stack)
+- [Project Structure](#project-structure)
+- [Getting Started](#getting-started)
+- [Localization](#localization)
+
+
+## Features
+
+### 1. Work Schedule
+- Dual-View Visualization: Offers two dynamic modes to track work schedules:
+
+1. Interactive Calendar: Provides a monthly overview of assigned shifts, allowing users to visualize their work cycle at a glance.
+2. Attendance Chronology: A detailed, scrollable list view displaying daily attendance records, including precise check-in/check-out timestamps and shift durations.
+
+### 2. Profile & Settings
+
+- Multi-language support (Arabic/English) with instant UI updates.
+- Theme switching support (Light/Dark mode).
+
+## Technical Architecture
+The app follows **Clean Architecture** principles, ensuring a separation of concerns between:
+- **Data Layer:** Handles API calls (Dio) and Data Models.
+- **Domain Layer:** Contains Business Logic (Entities & Use Cases).
+- **Presentation Layer:** UI components and State Management using **Cubit (BLoC)**.
+
+## Tech Stack
+
+| Component          | Packages & Tools                                         
+|--------------------|---------------------------------------------------------
+| **State Management**| flutter_bloc, equatable, dartz, get_it (Service Locator)       
+| **Networking** | Dio, Pretty Dio Logger                                  
+| **Responsive UI** | flutter_screenutil                                      
+| **Storage** | Hive (Local DB), hive_flutter, path_provider,                     
+| **UI Components** | Shimmer, Custom Clippers, Google Fonts,flutter_svg,                  
+
+
+## Project Structure
 lib/
 ├── main.dart
 ├── core/
@@ -137,3 +183,30 @@ lib/
 # workScheduleScreen: Implements Clean Architecture (Data, Domain, Presentation) to fetch work schedule attendance and calendar
 # layoutScreen: App main navigation and layout management
 # profileScreen: User settings and localization preferences
+
+
+## Getting Started
+
+1. Clone the repository:
+ ```sh
+   git clone https://github.com/HamdiMohamed2000/Qerp-App.git
+   ```
+
+2. Install dependencies:
+
+   ```sh
+   flutter pub get
+   ```   
+
+3. Run the project:
+
+   ```sh
+   flutter run
+   ```   
+## Localization
+
+Supports multiple languages using the `intl` package with:
+
+- English (en)
+- Arabic (ar)
+

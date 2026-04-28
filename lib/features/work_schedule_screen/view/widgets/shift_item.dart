@@ -23,11 +23,11 @@ class ShiftItem extends StatelessWidget{
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 30, sigmaY: 30),
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 10.w,vertical: 10.h),
+          padding: EdgeInsets.symmetric(horizontal: 8.w,vertical: 8.h),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(10.r)),
             color: AppColors.white.withValues(alpha: 0.1),
-            border: BorderDirectional(start: BorderSide(color:ShiftsMethod.getShiftColor(shift),width: 7))
+            border: BorderDirectional(start: BorderSide(color:ShiftsMethod.getShiftColor(shift),width: 5))
           ),
           child: Row(
             spacing: 5.w,

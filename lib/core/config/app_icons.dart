@@ -29,6 +29,7 @@ class AppIcons {
   static const String ukFlag = '${_path}uk.svg';
   static const String ksaFlag = '${_path}ksa.svg';
   static const String dropArrow = '${_path}drop_arrow.svg';
+  static const String settingsArrow = '${_path}settings_arrow.svg';
 
   static Widget icon({required String icon, double size = 24, Color? color}) =>
       SvgPicture.asset(

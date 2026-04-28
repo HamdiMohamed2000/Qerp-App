@@ -32,96 +32,98 @@ class CalendarTable extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    return TableCalendar(
-                locale: sl<Storage>().getLang(),
-                availableGestures: AvailableGestures.none,
-                firstDay: DateTime.utc(
-                  DateTime.now().year,
-                  DateTime.now().month,
-                ),
-                lastDay: DateTime.utc(2030, 12, 31),
-                focusedDay: focusedDay,
-                headerVisible: false,
-                daysOfWeekHeight: 40.h,
-                rowHeight: 58.h,
-
-                calendarStyle: CalendarStyle(outsideDaysVisible: true),
-
-                calendarBuilders: CalendarBuilders(
-                  dowBuilder: (context, day) {
-                    final dayName = DateFormat.E(
-                      sl<Storage>().getLang(),
-                    ).format(day);
-
-                    return Container(
-                      margin: EdgeInsets.symmetric(
-                        horizontal: 3.w,
-                        vertical: 5.h,
-                      ),
-                      decoration: BoxDecoration(
-                        color: Theme.of(context).colorScheme.secondary,
-                        borderRadius: BorderRadius.circular(10.r),
-                        border: Border.all(
-                          color: Theme.of(context).colorScheme.outline
-                              .withValues(
-                                alpha: context.isDarkMode ? 0.05 : 1.0,
-                              ),
-                          width: 0.5,
+    return Padding(
+      padding:  EdgeInsets.symmetric(horizontal: 12.w),
+      child: TableCalendar(
+                  locale: sl<Storage>().getLang(),
+                  availableGestures: AvailableGestures.none,
+                  firstDay: DateTime.utc(
+                    DateTime.now().year,
+                    DateTime.now().month,
+                  ),
+                  lastDay: DateTime.utc(2030, 12, 31),
+                  focusedDay: focusedDay,
+                  headerVisible: false,
+                  daysOfWeekHeight: 42.h,
+                  rowHeight: 60.h,
+                  calendarStyle: CalendarStyle(outsideDaysVisible: true),
+      
+                  calendarBuilders: CalendarBuilders(
+                    dowBuilder: (context, day) {
+                      final dayName = DateFormat.E(
+                        sl<Storage>().getLang(),
+                      ).format(day);
+      
+                      return Container(
+                        margin: EdgeInsets.symmetric(
+                          horizontal: 3.w,
+                          vertical: 5.h,
                         ),
-                        boxShadow: [
-                          BoxShadow(
-                            color: AppColors.black.withValues(alpha: 0.05),
-                            blurRadius: 24,
-                            offset: const Offset(0, 5),
+                        decoration: BoxDecoration(
+                          color: Theme.of(context).colorScheme.secondary,
+                          borderRadius: BorderRadius.circular(8.r),
+                          border: Border.all(
+                            color: Theme.of(context).colorScheme.outline
+                                .withValues(
+                                  alpha: context.isDarkMode ? 0.05 : 1.0,
+                                ),
+                            width: 0.5,
                           ),
-                        ],
-                      ),
-                      child: Center(
-                        child: Text(dayName, style: TextStyles.textViewMedium9),
-                      ),
-                    );
-                  },
-
-                  todayBuilder: (context, day, focusedDay) {
-                    final entity = _fetchDays(day);
-                    return CalendarDayItem(
-                      calendarEntity: entity,
-                      isCurrentDay: true,
-                    );
-                  },
-                  defaultBuilder: (context, day, focusedDay) {
-                    final entity = _fetchDays(day);
-                    return  CalendarDayItem(calendarEntity: entity);
-                  },
-
-                  outsideBuilder: (context, day, focusedDay) {
-                    return Container(
-                      width: 45.w,
-                      height: 52.h,
-                      margin: EdgeInsets.symmetric(horizontal: 3.w),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5.r),
-                        color: Theme.of(context).colorScheme.secondary,
-                        border: Border.all(
-                          color: Theme.of(context).colorScheme.outline
-                              .withValues(
-                                alpha: context.isDarkMode ? 0.05 : 1.0,
-                              ),
-                          width: 0.5,
+                          boxShadow: [
+                            BoxShadow(
+                              color: AppColors.black.withValues(alpha: 0.05),
+                              blurRadius: 24,
+                              offset: const Offset(0, 5),
+                            ),
+                          ],
                         ),
-                      ),
-                      child: Center(
-                        child: Text(
-                          '${day.day}',
-                          style: TextStyles.textViewBold14.copyWith(
-                            color: Theme.of(context).colorScheme.surface,
+                        child: Center(
+                          child: Text(dayName, style: TextStyles.textViewMedium9),
+                        ),
+                      );
+                    },
+      
+                    todayBuilder: (context, day, focusedDay) {
+                      final entity = _fetchDays(day);
+                      return CalendarDayItem(
+                        calendarEntity: entity,
+                        isCurrentDay: true,
+                      );
+                    },
+                    defaultBuilder: (context, day, focusedDay) {
+                      final entity = _fetchDays(day);
+                      return  CalendarDayItem(calendarEntity: entity);
+                    },
+      
+                    outsideBuilder: (context, day, focusedDay) {
+                      return Container(
+                        width: 43.w,
+                        height: 52.h,
+                        margin: EdgeInsets.symmetric(horizontal: 3.w),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10.r),
+                          color: Theme.of(context).colorScheme.secondary,
+                          border: Border.all(
+                            color: Theme.of(context).colorScheme.outline
+                                .withValues(
+                                  alpha: context.isDarkMode ? 0.05 : 1.0,
+                                ),
+                            width: 0.5,
                           ),
                         ),
-                      ),
-                    );
-                  },
+                        child: Center(
+                          child: Text(
+                            '${day.day}',
+                            style: TextStyles.textViewBold14.copyWith(
+                              color: Theme.of(context).colorScheme.surface,
+                            ),
+                          ),
+                        ),
+                      );
+                    },
+                  ),
                 ),
-              );
+    );
   }
 
 }
